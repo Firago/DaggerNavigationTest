@@ -24,7 +24,7 @@ public class DaggerApplication extends Application implements HasActivityInjecto
         super.onCreate();
         DaggerApplicationComponent
                 .builder()
-                .context(this)
+                .application(this)
                 .build()
                 .inject(this);
     }

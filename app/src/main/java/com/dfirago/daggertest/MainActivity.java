@@ -5,10 +5,14 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 
+import com.dfirago.daggertest.model.Animal;
 import com.dfirago.daggertest.navigation.FragmentOrchestrator;
 import com.dfirago.daggertest.navigation.NavigationManager;
 
+import java.util.Map;
+
 import javax.inject.Inject;
+import javax.inject.Provider;
 
 import dagger.android.AndroidInjection;
 import dagger.android.AndroidInjector;
@@ -21,6 +25,8 @@ public class MainActivity extends AppCompatActivity implements HasSupportFragmen
     DispatchingAndroidInjector<Fragment> fragmentInjector;
     @Inject
     NavigationManager navigationManager;
+    @Inject
+    Map<Class<? extends Animal>, Provider<Animal>> mapping;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

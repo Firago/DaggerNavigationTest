@@ -1,6 +1,6 @@
 package com.dfirago.daggertest.dagger.components;
 
-import android.content.Context;
+import android.app.Application;
 
 import com.dfirago.daggertest.DaggerApplication;
 import com.dfirago.daggertest.dagger.modules.ApplicationModule;
@@ -21,7 +21,7 @@ public interface ApplicationComponent {
     interface Builder {
 
         @BindsInstance
-        Builder context(Context context);
+        Builder application(Application application);
 
         ApplicationComponent build();
     }
